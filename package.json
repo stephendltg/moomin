@@ -1,0 +1,36 @@
+{
+  "name": "moomin",
+  "version": "0.0.1",
+  "description": "server http moomin",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "go": "1.16"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "window"
+  ],
+  "contributors": [
+    "stephen@epyo.eu"
+  ],
+  "scripts": {
+    "build": "make",
+    "clean": "make clean",
+    "svn": "bash scripts/release.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://stephen-epyo@bitbucket.org/stephen-epyo/moomin.git"
+  },
+  "keywords": [
+    "bluetooth",
+    "mqtt",
+    "influxdb",
+    "golang"
+  ],
+  "author": "stephen@epyo.eu",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/stephen-epyo/moomin#readme"
+}
