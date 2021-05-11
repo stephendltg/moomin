@@ -44,8 +44,8 @@ clean:
 	rm -f $(BINARY_NAME)-linux
 	rm -f $(BINARY_NAME)-rasp
 	rm -f $(BINARY_NAME)-win-amd64.exe
-	rm -f $(BINARY_NAME)-darwin-amd64
-	rm -f $(BINARY_NAME)-darwin-arm64
+	rm -f $(BINARY_NAME)-darwin-amd64.app
+	rm -f $(BINARY_NAME)-darwin-arm64.app
 
 deps:
 	go mod tidy
