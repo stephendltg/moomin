@@ -1,6 +1,6 @@
 {
   "name": "moomin",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "server http moomin",
   "main": "index.js",
   "private": true,
@@ -18,19 +18,21 @@
   "scripts": {
     "build": "make",
     "clean": "make clean",
+    "docker:run": "sudo docker-compose up -d",
+    "docker:scale": "sudo docker-compose up -d --scale=server=2",
+    "docker:stop": "docker-compose down -v",
+    "docker:log": "sudo docker-compose logs --tail='all'",
+    "docker:destroy": "docker-compose down -v --rmi all --remove-orphans",
     "svn": "bash scripts/release.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://stephen-epyo@bitbucket.org/stephen-epyo/moomin.git"
+    "url": "git+https://github.com/stephendltg/moomin.git"
   },
   "keywords": [
-    "bluetooth",
-    "mqtt",
-    "influxdb",
     "golang"
   ],
   "author": "stephen@epyo.eu",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/stephen-epyo/moomin#readme"
+  "homepage": "https://github.com/stephendltg/moomin#readme"
 }

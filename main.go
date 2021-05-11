@@ -7,6 +7,7 @@ import (
 	"os"
 
 	nocache "github.com/alexander-melentyev/gin-nocache"
+	helmet "github.com/danielkov/gin-helmet"
 	static "github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
@@ -14,7 +15,7 @@ import (
 )
 
 // Constants
-const VERSION = "0.0.2"
+const VERSION = "0.0.4"
 
 // Vars cli
 var (
@@ -63,6 +64,9 @@ func main() {
 
 	// Gin instance
 	r := gin.Default()
+
+	// Security middleware
+	r.Use(helmet.Default())
 
 	// Cache enable/disable
 	if !*cache {

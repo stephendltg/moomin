@@ -7,7 +7,7 @@ Get binary moomin
 
 > for linux
 > chmod +x moomin
-> sudo ./moomin -p=8080 -debug -$HOME/public
+> ./moomin -p=8080 -debug -$HOME/public
 
 |   params              | value                 |   Description     |
 |   ==========          | ====================  | ================= |
@@ -97,6 +97,19 @@ $ go mod download
 ### REFERENCES
 
 __ref__: https://awesomeopensource.com/project/miguelmota/golang-for-nodejs-developers
+
+
+---
+
+### DOCKER PUSH
+
+```
+docker login
+```
+
+```
+docker push stephendltg/moomin:latest
+```
 
 
 

@@ -17,11 +17,11 @@ fi
 
 next_ref="v$next_version"
 
-git add -u
-
 # Make build
 npm run clean
 npm run build
+
+git add -u
 
 # Update version
 update_version 'package.json' $next_version

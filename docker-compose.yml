@@ -1,0 +1,26 @@
+version: "3.4"
+
+services:
+
+  traefik:
+    image: traefik:2.4
+    volumes:
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml
+      - /var/run/docker.sock:/var/run/docker.sock
+    links:
+      - server
+    ports:
+      - "5000:5000"
+      - "127.0.0.1:8080:8080"
+
+  server:
+    hostname: server
+    image: stephendltg/moomin:latest
+    restart: always
+    volumes:
+      - ./public:/app/public
+    command: ./moomin -debug -p=5000 -cache -d=./public
+    labels:
+      - "traefik.http.routers.moomin.rule=PathPrefix(`/`)"
+      - traefik.http.services.moomin.loadBalancer.sticky.cookie.name=server_id
+      - traefik.http.services.moomin.loadBalancer.sticky.cookie.httpOnly=true
