@@ -7,12 +7,13 @@ Get binary moomin
 
 > for linux
 > chmod +x moomin
-> sudo ./moomin -p=8080 -debug
+> sudo ./moomin -p=8080 -debug -$HOME/public
 
 |   params              | value                 |   Description     |
 |   ==========          | ====================  | ================= |
 |   p                   | string                | Http port         |
 |   debug               | boolean               | Mode debug        |  
+|   d                   | string                | Path web static   |  
 
 __Create dir public next binary and push your files__
 

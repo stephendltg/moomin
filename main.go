@@ -14,13 +14,14 @@ import (
 )
 
 // Constants
-const VERSION = "0.0.1"
+const VERSION = "0.0.2"
 
 // Vars cli
 var (
 	port  = flag.String("p", "5000", "Port http server")
 	debug = flag.Bool("debug", false, "Mode debug")
 	cache = flag.Bool("cache", false, "Mode cache")
+	dir   = flag.String("d", "./public", "Dir site web")
 )
 
 // Init
@@ -49,7 +50,7 @@ func main() {
 
 	// debugger
 	debugger := log.WithFields(log.Fields{"package": "MOOMIN"})
-	debugger.Trace("Connecting ...")
+	debugger.Info("Connecting ...", *dir)
 
 	// Debug mode
 	if !*debug {
@@ -78,7 +79,7 @@ func main() {
 	})
 
 	// Static server
-	r.Use(static.Serve("/", static.LocalFile("./public", true)))
+	r.Use(static.Serve("/", static.LocalFile(*dir, true)))
 
 	r.Run(":" + *port)
 }

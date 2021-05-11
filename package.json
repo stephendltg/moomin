@@ -1,6 +1,6 @@
 {
   "name": "moomin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "server http moomin",
   "main": "index.js",
   "private": true,

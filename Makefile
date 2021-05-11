@@ -51,9 +51,11 @@ deps:
 	go mod tidy
 	go mod verify
 
-docker: clean build
+# docker run --rm -v "$(pwd)/public:/app/public" -p 5000:5000 ${BINARY_NAME}:latest 
+docker-build: clean
 	docker build -t $(BINARY_NAME) .
  	docker run --rm $(BINARY_NAME):latest
+	
 
 help:
 	@echo "make: compile packages and dependencies"
