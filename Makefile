@@ -26,10 +26,10 @@ build-rasp:
 	GIN_MODE=release GOOS=linux GOARCH=arm GOARM=5 $(GOBUILD) -v -o build/$(BINARY_NAME)-rasp .
 
 build-darwin:
-	GIN_MODE=release GOOS=darwin GOARCH=amd64 $(GOBUILD) -v -o build/$(BINARY_NAME)-darwin-amd64.app .
+	GIN_MODE=release GOOS=darwin GOARCH=amd64 $(GOBUILD) -v -o build/$(BINARY_NAME)-darwin-amd64 .
 
 build-darwin-arm:
-	GIN_MODE=release GOOS=darwin GOARCH=arm64 $(GOBUILD) -v -o build/$(BINARY_NAME)-darwin-arm64.app .
+	GIN_MODE=release GOOS=darwin GOARCH=arm64 $(GOBUILD) -v -o build/$(BINARY_NAME)-darwin-arm64 .
 
 build-win:
 	GIN_MODE=release GOOS=windows GOARCH=amd64 $(GOBUILD) -v -o build/$(BINARY_NAME)-win-amd64.exe .
@@ -45,8 +45,8 @@ clean:
 	rm -f build/$(BINARY_NAME)-linux
 	rm -f build/$(BINARY_NAME)-rasp
 	rm -f build/$(BINARY_NAME)-win-amd64.exe
-	rm -f build/$(BINARY_NAME)-darwin-amd64.app
-	rm -f build/$(BINARY_NAME)-darwin-arm64.app
+	rm -f build/$(BINARY_NAME)-darwin-amd64
+	rm -f build/$(BINARY_NAME)-darwin-arm64
 
 deps:
 	go mod tidy
