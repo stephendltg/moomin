@@ -10,8 +10,14 @@ GOFMT=gofmt
 GOLINT=golint
 BINARY_NAME=moomin
 AUTHOR=stephendltg
+NODE=v14.16.1
+NVM=v0.38.0
 
 all: deps tool build-linux build-rasp build-darwin build-darwin-arm build-win
+
+pre-install: 
+	@echo "Installing project ${BINARY_NAME}..."
+	. ${NVM_DIR}/nvm.sh && nvm install ${NODE} && nvm use ${NODE}
 
 dev:
 	GIN_MODE=release $(GORUN) main.go -debug
@@ -59,11 +65,15 @@ docker-build: clean
 
 docker-push:
 	docker push stephendltg/moomin:latest
-	
+
+nvm:
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${NVM}/install.sh | bash
 
 help:
 	@echo "make: compile packages and dependencies"
 	@echo "make tool: run specified go tool"
 	@echo "make clean: remove object files and cached files"
+	@echo "make nvm: insall nvm"
+	@echo "make pre-install: Pre install nodejs"
 	@echo "make deps: get the deployment tools"
 	@echo "make docker: Build docker"
