@@ -10,7 +10,7 @@ Get binary moomin
 > ./moomin -p=8080 -debug -$HOME/public
 
 |   params              | value                 |   Description     |
-|   ==========          | ====================  | ================= |
+|   :---------          | :-------------------  | :---------------- |
 |   p                   | string                | Http port         |
 |   debug               | boolean               | Mode debug        |  
 |   d                   | string                | Path web static   |  
@@ -98,8 +98,6 @@ $ go mod download
 
 __ref__: https://awesomeopensource.com/project/miguelmota/golang-for-nodejs-developers
 
-
----
 
 ### DOCKER PUSH
 
