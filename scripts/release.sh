@@ -19,11 +19,9 @@ next_ref="v$next_version"
 
 # Make build
 npm run clean
-# npm run build
+npm run build
 
 git add -u
-
-npm run build
 
 # Update version
 update_version 'package.json' $next_version
