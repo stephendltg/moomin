@@ -1,7 +1,7 @@
 {
   "name": "moomin",
   "version": "0.0.4",
-  "description": "server http moomin",
+  "description": "Server http moomin",
   "main": "index.js",
   "private": true,
   "engines": {

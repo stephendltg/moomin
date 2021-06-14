@@ -109,5 +109,19 @@ docker login
 docker push stephendltg/moomin:latest
 ```
 
+## GENERATE DEBIAN PACKAGE
 
+__ref:__ http://sdz.tdct.org/sdz/creer-un-paquet-deb.html
+
+__red:__ https://github.com/practice-golang/hello-cmake
+
+__ref:__ https://stackoverflow.com/questions/61507209/creating-a-go-binary-as-debian-binary-package-for-a-custom-repository
+
+
+## INSTALL AND REMOVE DEB
+
+```
+sudo dpkg -i nom_du_paquet.deb
+sudo apt-get remove nom_du_paquet
+```
 
