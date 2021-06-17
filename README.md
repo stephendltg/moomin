@@ -98,7 +98,6 @@ $ go mod download
 
 __ref__: https://awesomeopensource.com/project/miguelmota/golang-for-nodejs-developers
 
-
 ### DOCKER PUSH
 
 ```
@@ -113,7 +112,7 @@ docker push stephendltg/moomin:latest
 
 __ref:__ http://sdz.tdct.org/sdz/creer-un-paquet-deb.html
 
-__red:__ https://github.com/practice-golang/hello-cmake
+__ref:__ https://github.com/practice-golang/hello-cmake
 
 __ref:__ https://stackoverflow.com/questions/61507209/creating-a-go-binary-as-debian-binary-package-for-a-custom-repository
 
