@@ -26,15 +26,21 @@ __Create dir public next binary and push your files__
 ### GOLANG
 
 #### GOLANG
+
 > cd /usr/local
+
 > sudo wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
+
 > sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
 
 > nano $HOME/.profile
 
 Add /usr/local/go/bin to the PATH environment variable
+
 > export PATH=$PATH:/usr/local/go/bin
+
 Apply change
+
 >. ~/.profile
 
 > go version
@@ -61,8 +67,10 @@ Apply change
 > go clean -i
 
 **Install**
-Install app 
+Install app
+
 > go install .
+
 > sudo ~/go/bin/gateway-ble
 
 ---
