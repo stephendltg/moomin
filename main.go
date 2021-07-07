@@ -4,7 +4,9 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"net"
 	"os"
+	"strings"
 
 	nocache "github.com/alexander-melentyev/gin-nocache"
 	helmet "github.com/danielkov/gin-helmet"
@@ -45,13 +47,29 @@ func init() {
 
 }
 
+// function to get the public ip address
+func GetOutboundIP() (string, error) {
+	conn, err := net.Dial("udp", "8.8.8.8:80")
+	if err != nil {
+		return "127.0.0.1", err
+	}
+	defer conn.Close()
+	localAddr := conn.LocalAddr().String()
+	idx := strings.LastIndex(localAddr, ":")
+	return localAddr[0:idx], nil
+}
+
 func main() {
 
-	fmt.Println("Moomin start ....")
+	ip, err := GetOutboundIP()
+	if err != nil {
+		fmt.Printf("⚠ %s\n", err)
+	}
+	fmt.Printf("✔ Moomin start .... http://%s:%s\n", ip, *port)
 
 	// debugger
 	debugger := log.WithFields(log.Fields{"package": "MOOMIN"})
-	debugger.Info("Connecting ...", *dir)
+	debugger.Info("✔ Connecting ... ", *dir)
 
 	// Debug mode
 	if !*debug {
@@ -71,7 +89,7 @@ func main() {
 	// Cache enable/disable
 	if !*cache {
 		r.Use(nocache.NoCache())
-		fmt.Println("No cache ....")
+		fmt.Println("ℹ No cache ....")
 	}
 
 	// Route: Ping
