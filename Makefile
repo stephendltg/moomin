@@ -93,7 +93,7 @@ clean:
 	rm -r build/*
 
 deps:
-	go mod tidy
+	# go mod tidy
 	go mod vendor
 	go mod verify
 

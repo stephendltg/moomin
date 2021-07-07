@@ -26,15 +26,21 @@ __Create dir public next binary and push your files__
 ### GOLANG
 
 #### GOLANG
+
 > cd /usr/local
+
 > sudo wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
+
 > sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
 
 > nano $HOME/.profile
 
 Add /usr/local/go/bin to the PATH environment variable
+
 > export PATH=$PATH:/usr/local/go/bin
+
 Apply change
+
 >. ~/.profile
 
 > go version
@@ -61,8 +67,10 @@ Apply change
 > go clean -i
 
 **Install**
-Install app 
+Install app
+
 > go install .
+
 > sudo ~/go/bin/gateway-ble
 
 ---
@@ -98,7 +106,6 @@ $ go mod download
 
 __ref__: https://awesomeopensource.com/project/miguelmota/golang-for-nodejs-developers
 
-
 ### DOCKER PUSH
 
 ```
@@ -113,7 +120,7 @@ docker push stephendltg/moomin:latest
 
 __ref:__ http://sdz.tdct.org/sdz/creer-un-paquet-deb.html
 
-__red:__ https://github.com/practice-golang/hello-cmake
+__ref:__ https://github.com/practice-golang/hello-cmake
 
 __ref:__ https://stackoverflow.com/questions/61507209/creating-a-go-binary-as-debian-binary-package-for-a-custom-repository
 
