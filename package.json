@@ -10,7 +10,7 @@
   "os": [
     "darwin",
     "linux",
-    "window"
+    "win32"
   ],
   "contributors": [
     "stephen@epyo.eu"
