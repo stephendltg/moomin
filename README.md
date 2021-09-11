@@ -13,7 +13,8 @@ Get binary moomin
 |   :---------          | :-------------------  | :---------------- |
 |   p                   | string                | Http port         |
 |   debug               | boolean               | Mode debug        |  
-|   d                   | string                | Path web static   |  
+|   d                   | string                | Path web static   |
+|   cache               | string                | Active cache      |
 
 __Create dir public next binary and push your files__
 
