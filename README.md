@@ -7,7 +7,7 @@ Get binary moomin
 
 > for linux
 > chmod +x moomin
-> ./moomin -p=8080 -debug -$HOME/public
+> ./moomin -p=8080 -debug -d=$HOME/public
 
 |   params              | value                 |   Description     |
 |   :---------          | :-------------------  | :---------------- |
@@ -71,7 +71,7 @@ Install app
 
 > go install .
 
-> sudo ~/go/bin/gateway-ble
+> sudo ~/go/bin/moomin
 
 ---
 
